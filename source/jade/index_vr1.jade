@@ -1,0 +1,19 @@
+extends partials/layout
+
+block content
+    .clipping-mask
+        svg(width="320" height="480")
+            clipPath(id="clipping")
+                path(d="M44 0 310 0 A 10 10, 0, 0, 1, 320 10 L 320 470 A 10 10, 0, 0, 1, 310 480 L 10 480 A 10 10, 0, 0, 1, 0 470 L 0 44 Z")
+
+    header
+        h2 Ты сегодня покормил кота?
+
+    main
+        .width-wrap
+            include elements/list
+
+
+    // эти скрипты на сервере всегда вырезать
+    script(type="text/javascript" ) $(function(){$.pixlayout({src: "../img/temp/main.jpg",opacity: 0.5,top: 0,left: 0,center: false,clip: true,show: false});});
+    // END эти скрипты на сервере всегда вырезать

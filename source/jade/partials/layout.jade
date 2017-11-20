@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width" viewport="width=device-width")
+
+        link(rel='stylesheet', href="../css/style.css")
+
+        script(src="../js/app-common.js")
+        script(src="../js/app.js")
+        // эти скрипты на сервере всегда вырезать
+        script(src="../js/jquery.pixlayout.0.9.6.js")
+        // END эти скрипты на сервере всегда вырезать
+
+    body
+        .page-wrap
+            block content

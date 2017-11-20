@@ -1,0 +1,214 @@
+.items-list
+  @media md
+    display block
+    text-align center
+
+  &--el
+    display inline-block
+    vertical-align top
+    width 320px
+    position relative
+    min-height 480px
+
+    @media md
+      margin 0 15px 40px
+
+    @media sm
+      margin 0 auto 40px
+      display block
+
+    &.choiced
+      .items-list--el-able
+        display none
+      .items-list--el-checked
+        display block
+
+    &.disabled
+      .items-list--el-params
+        cursor default
+
+      .items-list--el-able
+        display none
+      .items-list--el-disable
+        display block
+
+    &:hover
+      svg.border
+        path
+          stroke $cBlue_l
+
+      .items-list--el-weight
+        background $cBlue_l
+
+    &.hover
+      &:hover
+        svg.border
+          path
+            stroke $cBlue
+
+        .items-list--el-weight
+          background $cBlue
+
+    &.choiced
+      svg.border
+        path
+          stroke $cPink
+
+      .items-list--el-weight
+        background $cPink
+
+      &:hover
+        svg.border
+          path
+            stroke $cPink_l
+
+        .items-list--el-weight
+          background $cPink_l
+
+      &.hover
+        &:hover
+          svg.border
+            path
+              stroke $cPink
+
+          .items-list--el-weight
+            background $cPink
+
+    &.disabled
+      svg.border
+        path
+          stroke $cGray_l
+
+      .items-list--el-params
+        span,
+        h3,
+        li
+          opacity 0.5
+          color $cGray_l
+
+      .items-list--el-weight
+        background $cGray_l
+
+        span
+          opacity 1
+          color $cWhite
+
+      .items-list--el-img
+        img
+          opacity 0.5
+
+    &-img
+      position absolute
+      left 0
+      top 0
+      height 480px
+      right 0
+      clip-path url(#clipping)
+
+      .img
+        position absolute
+        left 0
+        bottom 0
+        max-width 100%
+
+      svg
+        width 320px
+        height 480px
+        position absolute
+        left 0
+        top 0
+
+        &.bg
+          path
+            fill $cWhite
+
+        &.border
+          path
+            stroke-width 8px
+            stroke $cBlue
+            transition all 0.2s ease-in-out
+            fill transparent
+
+    &-params
+      position relative
+      z-index 5
+      padding 21px 50px
+      min-height 480px
+      cursor pointer
+
+      span
+        display block
+        margin-bottom 5px
+
+      h3
+        margin-bottom 17px
+
+      ul
+        li
+          display block
+          text-align left
+
+    &-weight
+      position absolute
+      right 15px
+      bottom 15px
+      width 81px
+      height 81px
+      border-radius 81px
+      background $cBlue
+      text-align center
+      display flex
+      align-items center
+      justify-content center
+      transition all 0.2s ease-in-out
+
+      span
+        display block
+        color $cWhite
+        font-size 21px
+        margin-bottom 0
+        padding-top 9px
+
+        strong
+          display block
+          font-size 42px
+          line-height 33px
+
+    &-text
+      position absolute
+      top calc(100% + 15px)
+      left 0
+      right 0
+      text-align center
+
+      @media md
+        position relative
+        top auto
+        padding-top 15px
+
+      @media min_height
+        position relative
+        top auto
+        padding-top 15px
+
+      span
+        display block
+        color $cWhite
+
+        a
+          font inherit
+          border-bottom 1px dashed $cBlue
+          transition all 0.2s ease-in-out
+
+          &:hover
+            border-bottom 1px dashed transparent
+
+    .items-list--el-checked,
+    .items-list--el-disable
+      display none
+
+.clipping-mask
+  position absolute
+  left -99999px
+
+
